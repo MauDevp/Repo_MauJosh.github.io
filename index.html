@@ -1,247 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mau</title>
+    <title>Joshua</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     <style>
-        :root{
-            font-family: var(--text_style);
-            --color-1: #000;
-            --color2: #fff;
-            --color3: #f00;
-            color-scheme: dark light;
-            --text_style: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            --text-mobile-titlePrincipal: 42px;
-            --text-mobile-nav: 20px;
-            --text-mobile-title: 30px;
-            --text-mobile-subtitle: 16px;
-            --text-mobile-paragraph: 14px;
-
-            --text-desktop-titlePrincipal: 48px;
-            --text-desktop-nav: 24px;
-            --text-desktop-title: 35px;
-            --text-desktop-subtitle: 20px;
-            --text-desktop-paragraph: 16px;
-        }
         body{
             margin: 0;
             padding: 0;
+            width: 100vw;
             height: 100vh;
-            width: 100vw;
-            box-sizing: border-box;
-        }
-        header{
+            background-color: papayawhip;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100px;
-            width: 100%;
+                align-items: center;
+                justify-content: center;
+            background: rgb(163,84,223);
+            background: radial-gradient(circle, rgba(163,84,223,1) 23%, rgba(84,164,223,1) 83%, rgba(0,61,255,1) 98%);
         }
-        .titulo-principal{
-            margin: 0;
-            font-size: var(--text-desktop-titlePrincipal);
-        }
-        .box-principal{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            background-color: blue;
-        }
-        .box-principal a{
-            text-decoration: none;
-        }
-        .titulo-principal{
-            color: var(--color2);
-        }
-        .navegador_paginas{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 68px;
-            width: 100%;
-            background-color: purple;
-        }
-        .navegador_paginas ul{
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            list-style: none;
-            padding: 0; 
-            margin: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .navegador_paginas a{
-            text-decoration: none;
-            color:rgb(255, 121, 255);
-            font-weight: 600;
-            margin: 0 10px;
-            font-size: var(--text-desktop-nav);
-        }
-        .navegador_paginas a:hover{
-            color:crimson ;
-        }
-        .secciones{
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .caja_principal{
+            display:flex;
+                align-items: center;
+                justify-content: center;
+            flex-direction: column;
+            width: 600px;
             height: 500px;
-            width: 100vw;
+            border-radius: 30px;
+            background: rgb(63,94,251);
+            background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
         }
-        .seccion_principal{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            width: 75%;
-            background-color: green;
+        .screenshot_cat{
+            width: 500px;
+            height: 280px;
+            border-radius: 8px;
+            border: 2px solid black;
+            object-fit: cover;
+            box-shadow: -6px 6px 12px 1px black;
         }
-        .seccion_principal section article{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            width: 100%;
-            flex-direction: column;
-            margin: 60px 0 60px 0;
+        a img:hover{
+            transform: scale(1.05);
+            transition: 0.5s;
         }
-        .seccion_principal section article h2{
-            margin: 0;
-            font-size: var(--text-desktop-title);
-        }
-        .seccion_principal section article p{
-            margin: 10px 0 0 0;
-            font-size: var(--text-desktop-subtitle)
-        }
-        .seccion_secundaria{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            height: 100%;
-            width: 25%;
-            background-color: rgb(68, 197, 92);
-        }
-        .seccion_secundaria h3{
-            margin: 0;
-            font-size: var(--text-desktop-title);
-        }
-        .seccion_secundaria p{
-            margin: 10px 0 0 0;
-            padding: 5px 10px 0 10px;
-            font-size: var(--text-desktop-paragraph);
-        }
-        footer{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100px;
-            width: 100%;
-            background-color: rgb(0, 0, 0);
-        }
-        footer p{
-            margin: 0;
-            font-size: var(--text-desktop-subtitle);
-            color: var(--color2);
-        }
-
-        @media screen and (max-width: 768px){
-            .titulo-principal{
-                font-size: var(--text-mobile-titlePrincipal);
-            }
-            .navegador_paginas{
-                height: 60px;
-            }
-            .navegador_paginas ul li a{
-                font-size: var(--text-mobile-nav);
-            }
-            .secciones{
-                flex-direction: column;
-            }
-            .seccion_principal{
-                width: 100%;
-            }
-            .seccion_secundaria{
-                width: 100%;
-            }
-            .seccion_principal section article{
-                margin: 20px 0 20px 0;
-                text-align: center;
-            }
-            .seccion_principal section article h2{
-                font-size: var(--text-mobile-title);
-            }
-            .seccion_principal section article p{
-                font-size: var(--text-mobile-subtitle);
-                padding: 5px 20px 5px 20px;
-            }
-            .seccion_secundaria h3{
-                font-size: var(--text-mobile-title);
-            }
-            .seccion_secundaria p{
-                font-size: var(--text-mobile-paragraph);
-            }
-            footer p{
-                font-size: var(--text-mobile-subtitle);
-            }
+        .subTitulo{
+            margin: 4px 0 0 0;
+            padding: 0;
+            font-size: 50px;
+            font-weight: 400;
+            font-family: 'Chewy';
+            color: papayawhip;
+            text-shadow: -4px 4px 4px black;
         }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <div class="box-principal">
-            <a href="index.html">
-                <h1 class="titulo-principal" id="title-principal">&lt;header&gt;</h1>
-            </a>
-        </div>
-    </header>
-
-    <nav class="navegador_paginas">
-        <ul>
-            <li><a href="index.html">nav-1</a></li>
-            <li><a href="index.html">nav-2</a></li>
-            <li><a href="index.html">nav-3</a></li>
-            <li><a href="index.html">nav-4</a></li>
-        </ul>
-    </nav>
-
-    <div class="secciones">
-
-        <main class="seccion_principal">
-
-            <section>
-                <article>
-                    <h2>Titulo</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                </article>
-                <article>
-                    <h2>Titulo</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                </article>
-                <article>
-                    <h2>Titulo</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                </article>
-
-            </section>
-
-        </main>
-
-        <aside class="seccion_secundaria">
-            <h3>Publicidad</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-        </aside>
-
+    <div class="caja_principal" id="caja"><!--etiquetas, clases, ids -->
+        <a href="https://www.youtube.com/watch?v=BBJa32lCaaY"><img class="screenshot_cat" src="2023-11-03.png"></a>
+        <h2 class="subTitulo"> Presiona aquí</h2>
     </div>
 
-    <footer>
-        <p>Copyrigth 2024</p>
-    </footer>
-
 </body>
+
 </html>
+
